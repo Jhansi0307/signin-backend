@@ -19,7 +19,6 @@ app.get("/", function (req, res) {
   res.send("Welcome");
 });
 
-
 app.post("/login", async function (req, res) {
   const { name, password } = req.body;
   const user = await client
