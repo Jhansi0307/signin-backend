@@ -16,7 +16,7 @@ async function createConnection() {
 export const client = await createConnection();
 
 app.get("/", function (req, res) {
-  res.send("Welcome");
+  res.send("Welcome To login page😊");
 });
 
 app.post("/login", async function (req, res) {
@@ -26,8 +26,8 @@ app.post("/login", async function (req, res) {
     .collection("users")
     .findOne({ name: name });
   if (user) {
-    const pass = user.password;
-    if (pass === password) {
+    const password= user.password;
+    if (password === password) {
       res.send({ msg: "Login Successfully" });
     } else {
       res.status(401).send("Incorrect Password");
