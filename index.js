@@ -26,8 +26,8 @@ app.post("/login", async function (req, res) {
     .collection("users")
     .findOne({ name: name });
   if (user) {
-    const password= user.password;
-    if (password === password) {
+    const pass = user.password;
+    if (pass === password) {
       res.send({ msg: "Login Successfully" });
     } else {
       res.status(401).send("Incorrect Password");
